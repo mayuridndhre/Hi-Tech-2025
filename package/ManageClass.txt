@@ -1,0 +1,17 @@
+//Create a package services with a class to manage student enrollment and course assignment.
+
+package services;
+import models.Student;
+import models.Course;
+
+public class ManageClass
+{
+
+public void studentData()
+{
+System.out.println("New Student added Successfully");
+s.showStudent();
+System.out.println("For the course of : ");
+s.display();
+}
+}

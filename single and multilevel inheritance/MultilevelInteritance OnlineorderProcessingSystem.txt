@@ -1,0 +1,54 @@
+/*2. Multilevel Inheritance - Online Order Processing System
+Problem Statement:
+Create an Online Shopping System with three levels of inheritance:
+Product class with attributes: productId, productName, and price.
+Order class (inherits Product) with additional attributes: orderId, quantity, and totalPrice.
+OnlineOrder class (inherits Order) with deliveryAddress, paymentStatus, and method processOrder().
+Requirements:
+calculateTotalPrice(): Multiplies price by quantity.
+processOrder(): Prints order confirmation and estimated delivery.
+Expected Output Example:
+Product: Laptop | Price: $800 | Quantity: 2  
+Total Price: $1600  
+Order ID: 12345 processed successfully! Delivery expected in 3 days.*/
+class Product
+{
+int productid;
+String productName;
+int price;
+
+}
+class Order extends Product
+{
+int orderId;
+int quantity;
+int totalPrice;
+
+void productDetails()
+{
+System.out.println("Product :"+productName+" | Price :"+price+" | Quantity :"+quantity);
+}
+
+
+void calculateTotalPrice()
+{
+int cal=totalPrice*quantity;
+System.out.println(cal);
+}
+}
+class OnlineOrder extends Order
+{
+String deliveryAddress;
+String paymentStatus;
+
+void processOrder()
+{
+System.out.println("Order ID :"+orderId+" processed successfully! Delivery expected in 3 days");
+}
+public static void main(String args[])
+{
+OnlineOrder o=new OnlineOrder();
+o.productDetails();
+
+}
+}
