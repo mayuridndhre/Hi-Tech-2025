@@ -8,12 +8,14 @@ package models;
 public class Student
 {
 public String name;
+public int age;
 public int rollNo;
 public String email;
 
-public Student(String name,int rollNo,String email)
+public Student(String name,int age,int rollNo,String email)
 {
 this.name=name;
+this.age=age;
 this.rollNo=rollNo;
 this.email=email;
 }
@@ -21,6 +23,7 @@ this.email=email;
 public void showStudent()
 {
 System.out.println("Name of Student is :"+name);
+System.out.println("Age of Student is :"+age);
 System.out.println("RollNo of Student is :"+rollNo);
 System.out.println("Email of Student is :"+email);
 }

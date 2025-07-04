@@ -1,29 +1,29 @@
 //Create a package transactions for handling deposits, withdrawals, and transfers.
 package transactions;
-import accounts.Customer;
+
 import accounts.Accountt;
 
-public class TransactionHandling
-{
-public void deposits(Accountt ac,int amt)
-{
-ac.balance+=amt;
-System.out.println("After Deposit available balance is :"+ac.balance);
-}
-public void withdrawls(Accountt ac,int amt)
-{
-if(amt <= ac.balance)
-{
-ac.balance-=amt;
-System.out.println("After Withdrawl available balance is :"+ac.balance);
-}
-else
-{
-System.out.println("Insufficient balance you have only "+ac.balance+" so you cannot withdrawl "+amt+ " from your original balance " +ac.balance );
-}
-}
-public void transfers()
-{
+public class TransactionHandling {
 
-}
+    public void deposits(Accountt ac, int amt) {
+        ac.deposit(amt);
+        System.out.println("After Deposit, available balance is: " + ac.getBalance());
+    }
+
+    public void withdrawls(Accountt ac, int amt) {
+        if (ac.withdraw(amt)) {
+            System.out.println("After Withdrawal, available balance is: " + ac.getBalance());
+        } else {
+            System.out.println("Insufficient balance. You have only " + ac.getBalance() + " and cannot withdraw " + amt);
+        }
+    }
+
+    public void transfers(Accountt from, Accountt to, int amt) {
+        if (from.withdraw(amt)) {
+            to.deposit(amt);
+            System.out.println("Transferred " + amt + " from Account " + from.getAccountNo() + " to Account " + to.getAccountNo());
+        } else {
+            System.out.println("Transfer failed. Insufficient balance.");
+        }
+    }
 }

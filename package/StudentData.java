@@ -1,33 +1,27 @@
-//T.1 Create a utils package to validate student data (e.g., age, email).
 package utils;
 import models.Student;
 
-public class StudentData
-{
+public class StudentData {
 
-public void validation(Student s)
-{
+    public boolean validation(Student s) {
+        String email = s.email;
+        if (email.contains("@") && email.endsWith(".com")) {
+            System.out.println("Valid Email.");
+            return true;
+        } else {
+            System.out.println("Invalid Email.");
+            return false;
+        }
+    }
 
-if(s.email == s.email)
-{
-System.out.println("Valid email "+s.email);
-}
-else
-{
-System.out.println("Invalid email id ");
-}
-}
-
-public void ageValidation(Student s)
-{
-if(s.age == s.age)
-{
-System.out.println("Valid Age "+s.age);
-}
-else
-{
-System.out.println("Invalid Age ");
-}
-
-}
+    public boolean ageValidation(Student s) {
+        int rollNo = s.rollNo;
+        if (rollNo > 0 && rollNo <= 999) {
+            System.out.println("Valid Roll Number.");
+            return true;
+        } else {
+            System.out.println("Invalid Roll Number.");
+            return false;
+        }
+    }
 }

@@ -6,7 +6,7 @@ class AreaApp
 {
 public static void main(String args[])
 {
-Rectangle2 r=new Rectangle2();
+Rectangle2 r=new Rectangle2r();
 r.getArea();
 }
 }

@@ -1,0 +1,19 @@
+/*✅ 1. substring() – Extracting Parts of Strings
+🔹 Task Ideas:
+Extract First Name and Last Name from "Mayuri Dandhare" using substring() and indexOf(" ").
+Get domain from an email like "abc@gmail.com" → Output: "gmail.com".
+From "2025-06-20", extract the year, month, and day separately.
+Extract only the middle part from "<<Hello>>" → Output: "Hello".
+From "RollNo-12345-Name", extract only the numeric part → Output: "12345".*/
+
+class Task1
+{
+public static void main(String args[])
+{
+String s="Mayuri Dandhare";
+System.out.println("First name is :"+s.substring(0,6);
+System.out.println("First name is :"+s.substring(7,15);
+String email="abc@gmail";
+
+}
+}

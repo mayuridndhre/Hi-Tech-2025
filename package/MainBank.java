@@ -1,26 +1,40 @@
-//Create a main class to simulate a customer performing bank operations.*/
 
 package mainbank;
+
 import accounts.Customer;
 import accounts.Accountt;
 import transactions.TransactionHandling;
+import utils.GenerateId;
 
-class MainBank
-{
-public static void main(String args[])
-{
-Customer c=new Customer("Mahii","Amravati");
-Accountt a=new Accountt(12345,60000);
-c.show();
-a.display();
+public class MainBanking {
+    public static void main(String[] args) {
 
-TransactionHandling t=new TransactionHandling();
-t.deposits(a,5000);
-t.withdrawls(a,3000);
-t.withdrawls(a,70000);
+        // Create a Customer
+        Customer customer1 = new Customer("Mayuri Dandhare", "Morshi");
+        customer1.show();
 
+        // Create two accounts (can be same or different customers)
+        Accountt acc1 = new Accountt(101, 5000);  // Mayuri's main account
+        Accountt acc2 = new Accountt(102, 2000);  // Mayuri's second account (or another customer)
 
+        // Create a Transaction Handler
+        TransactionHandling handler = new TransactionHandling();
 
+        // Deposit Operation
+        System.out.println("\nTransaction ID: " + GenerateId.generateTransactionId());
+        handler.deposits(acc1, 3000);
 
-}
+        // Withdrawal Operation
+        System.out.println("\nTransaction ID: " + GenerateId.generateTransactionId());
+        handler.withdrawls(acc1, 1000);
+
+        // Transfer Operation
+        System.out.println("\nTransaction ID: " + GenerateId.generateTransactionId());
+        handler.transfers(acc1, acc2, 2000);
+
+        // Final Balances
+        System.out.println("\nFinal Balances:");
+        System.out.println("Account " + acc1.getAccountNo() + " Balance: ₹" + acc1.getBalance());
+        System.out.println("Account " + acc2.getAccountNo() + " Balance: ₹" + acc2.getBalance());
+    }
 }
